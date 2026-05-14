@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teras Project</title>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    // CLIENT COLORS
+                    background: '#020617',
+                    section: '#0F172A',
+                    borderCustom: '#334155',
+                    accent: '#60A5FA',
+                    textMain: '#E2E8F0',
+
+                    // EXTRA SHADES
+                    accentSoft: '#93C5FD',
+                    accentDark: '#3B82F6',
+
+                    // GLASS
+                    glass: 'rgba(15,23,42,0.72)',
+                    glassStrong: 'rgba(15,23,42,0.9)',
+
+                    // TEXT
+                    darkSoft: '#94A3B8',
+                },
+
+                boxShadow: {
+                    glass: '0 8px 32px rgba(0,0,0,0.35)',
+                    glow: '0 0 40px rgba(96,165,250,0.18)',
+                },
+
+                borderRadius: {
+                    glass: '28px',
+                },
+
+                backgroundImage: {
+                    aurora:
+                        'radial-gradient(circle at top left, rgba(96,165,250,0.12), transparent 30%), radial-gradient(circle at bottom right, rgba(59,130,246,0.10), transparent 35%)',
+                },
+
+                animation: {
+                    float: 'float 8s ease-in-out infinite',
+                    pulseSlow: 'pulseSlow 6s ease-in-out infinite',
+                },
+
+                keyframes: {
+                    float: {
+                        '0%, 100%': {
+                            transform: 'translateY(0px)',
+                        },
+                        '50%': {
+                            transform: 'translateY(-12px)',
+                        },
+                    },
+
+                    pulseSlow: {
+                        '0%, 100%': {
+                            opacity: '.7',
+                        },
+                        '50%': {
+                            opacity: '1',
+                        },
+                    },
+                },
+            },
+        },
+    };
+</script>
+
+    <style>
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: Inter, sans-serif;
+        }
+
+        ::selection {
+            background: #6D5EFC;
+            color: white;
+        }
+
+        iframe {
+            filter: saturate(1.1);
+        }
+
+.glass {
+    background: rgba(15, 23, 42, 0.72);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid #334155;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+}
+    </style>
+</head>
+
+<body class="bg-background bg-aurora text-textMain overflow-x-hidden">
+
+    <!-- BACKGROUND IMAGE -->
+    <div class="fixed inset-0 opacity-10 pointer-events-none">
+        <img 
+            src="background.jpg"
+            alt=""
+            class="w-full h-full object-cover"
+        >
+    </div>
+
+    <!-- BACKGROUND BLOBS -->
+    <div class="fixed -top-32 -left-32 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float"></div>
+
+    <div class="fixed bottom-0 right-0 w-[32rem] h-[32rem] bg-accent/10 rounded-full blur-3xl animate-pulseSlow"></div>
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-5 left-1/2 -translate-x-1/2 z-50">
+        <div class="glass rounded-full px-8 py-4 flex items-center gap-8">
+            <img 
+            src="logo.png" 
+            alt="Custom Jersey"
+                class="w-10 h-10 object-contain"
+
+            />
+            <h1 class="text-xl md:text-2xl font-black tracking-tight text-brand">
+                Teras Project
+            </h1>
+
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+                <a href="#services" class="hover:text-brand transition">
+                    Layanan
+                </a>
+
+                <a href="#location" class="hover:text-brand transition">
+                    Lokasi
+                </a>
+
+                <a href="https://wa.me/0882009496636"
+                   target="_blank"
+                   class="bg-order hover:bg-orderHover text-white px-5 py-2.5 rounded-full transition-all duration-300 hover:scale-105 shadow-glass">
+                    Order Now
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="min-h-screen flex items-center justify-center px-6">
+
+        <div class="max-w-5xl mx-auto text-center">
+
+            <div class="glass rounded-glass p-10 md:p-16">
+
+                <span class="inline-flex items-center gap-2 bg-section/60 border border-borderCustom px-4 py-2 rounded-full text-sm font-medium text-brand mb-8">
+                    <i class="fas fa-shirt"></i>
+                    Premium Printing Studio
+                </span>
+
+                <h2 class="text-5xl md:text-7xl font-black leading-tight mb-6">
+                    Custom CLothing &
+                    <span class="text-brand block">
+                        Jersey Studio
+                    </span>
+                </h2>
+
+                <p class="text-darkSoft text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
+                    Spesialis custom kaos sablon DTF, jersey full print, bordir, dll untuk komunitas, event, maupun personal
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+
+                    <a href="https://wa.me/0882009496636"
+                       target="_blank"
+                       class="bg-order hover:bg-orderHover text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 hover:scale-105 shadow-glass flex items-center justify-center gap-3">
+
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        Chat di WhatsApp
+                    </a>
+
+                    <a href="#services"
+                       class="glass px-8 py-4 rounded-2xl font-semibold hover:scale-105 transition-all duration-300">
+                        Explore Services
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-24 px-6">
+
+        <div class="max-w-6xl mx-auto">
+
+            <div class="text-center mb-16">
+
+                <h3 class="text-4xl md:text-5xl font-black mb-4">
+                    Layanan Kami
+                </h3>
+
+                <p class="text-darkSoft text-lg">
+                    luwh mikir, kita desain dan printing yeah
+                </p>
+
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- CARD -->
+                <div class="glass rounded-glass p-8 hover:-translate-y-2 transition-all duration-300">
+
+                    <div class="w-16 h-16 rounded-2xl bg-brand/10 flex items-center justify-center mb-6">
+                        <i class="fas fa-shirt text-3xl text-brand"></i>
+                    </div>
+
+                    <h4 class="text-2xl font-bold mb-3">
+                        Custom Apparel
+                    </h4>
+
+                    <p class="text-darkSoft leading-relaxed">
+                        Kaos custom, polo, dan Hem dengan bahan berkualitas
+                    </p>
+
+                </div>
+
+                <!-- CARD -->
+                <div class="glass rounded-glass p-8 hover:-translate-y-2 transition-all duration-300">
+
+                    <div class="w-16 h-16 rounded-2xl bg-brand/10 flex items-center justify-center mb-6">
+                        <i class="fas fa-print text-3xl text-brand"></i>
+                    </div>
+
+                    <h4 class="text-2xl font-bold mb-3">
+                        Digital Printing
+                    </h4>
+
+                    <p class="text-darkSoft leading-relaxed">
+                        Produksi jersey custom untuk esports, futsal, gowes, komunitas, dan event
+                    </p>
+
+                </div>
+
+                <!-- CARD -->
+                <div class="glass rounded-glass p-8 hover:-translate-y-2 transition-all duration-300">
+
+                    <div class="w-16 h-16 rounded-2xl bg-brand/10 flex items-center justify-center mb-6">
+                        <i class="fas fa-palette text-3xl text-brand"></i>
+                    </div>
+
+                    <h4 class="text-2xl font-bold mb-3">
+                        Graphic Design
+                    </h4>
+
+                    <p class="text-darkSoft leading-relaxed">
+                        Sablon DTF detail tajam, warna vibrant, cocok untuk clothing brand dan custom satuan
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- LOCATION -->
+    <section id="location" class="py-24 px-6">
+
+        <div class="max-w-6xl mx-auto">
+
+            <div class="glass rounded-glass p-8 md:p-12">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+                    <div>
+
+                        <span class="text-brand font-semibold">
+                        </span>
+
+                        <h3 class="text-4xl font-black mt-2 mb-6">
+                            Kenapa Pilih Teras Project?
+                        </h3>
+
+                        <p class="text-darkSoft text-lg leading-relaxed mb-8">
+                            Bahan nyaman & berkualitas print detail dan tahan lama, bisa order satuan & partai, free konsultasi desain 
+                        </p>
+
+                        <div class="flex items-center gap-3 text-brand font-semibold">
+
+                            <div class="w-10 h-10 rounded-full bg-brand/10 flex items-center justify-center">
+                                <i class="fas fa-location-dot"></i>
+                            </div>
+
+                            Buka Setiap Hari kecuali libur
+                            
+
+                        </div>
+
+                    </div>
+
+                    <div class="overflow-hidden rounded-glass border border-borderCustom shadow-glass h-[400px]">
+
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.3688720862274!2d111.4669252!3d-7.8564087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e799f0039a0a921%3A0x3a7b6578e4ae352e!2sTeras%20Project%20(Kaos%20sablon%2C%20Jersey%20Full%20Print%2C%20Bordir%2C%20DLL)!5e0!3m2!1sid!2sid!4v1778775196504!5m2!1sid!2sid"
+                            width="100%"
+                            height="100%"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy">
+                        </iframe>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="px-6 pb-10">
+
+        <div class="max-w-6xl mx-auto">
+
+            <div class="glass rounded-glass p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+
+                <div>
+                    <h4 class="text-2xl font-black text-brand">
+                        Teras Project
+                    </h4>
+
+                    <p class="text-darkSoft mt-2">
+                        © 2026 All rights reserved.
+                    </p>
+                </div>
+
+                <div class="flex items-center gap-4">
+
+                    <a href="https://wa.me/0882009496636"
+                       target="_blank"
+                       class="w-14 h-14 rounded-2xl bg-section/60 border border-borderCustom flex items-center justify-center hover:scale-110 transition-all duration-300">
+
+                        <i class="fab fa-whatsapp text-2xl text-brand"></i>
+                    </a>
+
+                    <a href="#"
+                       class="w-14 h-14 rounded-2xl bg-section/60 border border-borderCustom flex items-center justify-center hover:scale-110 transition-all duration-300">
+
+                        <i class="fab fa-instagram text-2xl text-brand"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
